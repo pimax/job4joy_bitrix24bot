@@ -66,7 +66,7 @@ function sendHelpMessage($bot)
 
     foreach ($config['feeds'] as $com => $feed)
     {
-        $attach[] = new Message('[send='.$com.']'.$bot->t($com['Title']).'[/send]');
+        $attach[] = new Message('[send=/'.$com.']'.$bot->t($com['Title']).'[/send]');
     }
 
     $bot->send(new Message($bot->t('Hello! I can help you with IT projects.'), $_REQUEST['data']['PARAMS']['DIALOG_ID'], $attach));

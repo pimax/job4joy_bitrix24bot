@@ -66,7 +66,7 @@ function sendHelpMessage($bot)
 
     foreach ($config['feeds'] as $com => $feed)
     {
-        $attach[] = new Message('[send='.$com.']'.$bot->t($com).'[/send]');
+        $attach[] = new Message('[send='.$com.']'.$bot->t($com['Title']).'[/send]');
     }
 
     $bot->send(new Message($bot->t('Hello! I can help you with IT projects.'), $_REQUEST['data']['PARAMS']['DIALOG_ID'], $attach));
@@ -76,17 +76,17 @@ function sendHelpMessage($bot)
 /**
  * Get Feed Data
  *
- * @param $url Feed url
+ * @param $feed Feed data
  * @param $bot Bot instance
  * @return bool
  */
-function getFeed($url, $bot)
+function getFeed($feed, $bot)
 {
     global $googl;
 
     try {
         $reader = new Reader;
-        $resource = $reader->download($url);
+        $resource = $reader->download($feed['Feed']);
         $parser = $reader->getParser(
             $resource->getUrl(),
             $resource->getContent(),
@@ -110,8 +110,7 @@ function getFeed($url, $bot)
             $bot->send(new Message($bot->t('New projects not a found!'), $_REQUEST['data']['PARAMS']['DIALOG_ID']));
         }
     }
-    catch (Exception $e) {
-        writeToLog($e->getMessage(), 'Exception');
-    }
+    catch (Exception $e) {}
+
     return true;
 }

@@ -102,7 +102,7 @@ return [
             'Feed' => 'https://job4joy.com/marketplace/rss/?id=12'
         ],
 
-        '/translations  ' => [
+        '/translations' => [
             'Title' => 'Translation & Languages',
             'Feed' => 'https://job4joy.com/marketplace/rss/?id=14'
         ]

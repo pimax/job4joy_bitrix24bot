@@ -4,11 +4,13 @@ require_once(dirname(__FILE__) . '/vendor/autoload.php');
 require_once (dirname(__FILE__) .'/GooglShortener.php');
 
 $config = require 'config.php';
+$googl = new GooglShortener($config['google_token']);
 
 use PicoFeed\Reader\Reader;
 use pimax\bitrix24\BotApp;
 use pimax\bitrix24\Bot;
 use pimax\bitrix24\Message;
+use pimax\bitrix24\Link;
 
 $bot = new BotApp($_REQUEST["auth"]);
 

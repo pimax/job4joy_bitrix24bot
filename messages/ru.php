@@ -2,7 +2,7 @@
 return [
     'Hello! I can help you with IT projects.' => 'Привет! Я помогу с проектами в сфере ИТ.',
     'find work & hire freelancers' => 'Работа в сфере ИТ',
-    'All Jobs' => 'Все проекты',
+    'All jobs' => 'Все проекты',
     'Web Development' => 'Веб-разработка',
     'Software Development & IT' => 'Разработка ПО',
     'Design & Multimedia' => 'Дизайн и мультимедиа',
